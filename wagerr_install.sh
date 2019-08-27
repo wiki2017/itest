@@ -30,8 +30,8 @@ swapon -s
 echo "/swapfile none swap sw 0 0" >> /etc/fstab
 
 #echo "Enter alias for new node."
-   echo -e "${YELLOW}输入新节点别名.${NC}"
-   read ALIAS1
+#   echo -e "${YELLOW}输入新节点别名.${NC}"
+#   read ALIAS1
 
 function purgeOldInstallation() {
     echo -e "${GREEN}Searching and removing old $COIN_NAME files and configurations${NC}"
@@ -265,7 +265,7 @@ function important_information() {
  echo -e "Please check ${GREEN}$COIN_NAME${NC} is running with the following command: ${GREEN}systemctl status $COIN_NAME.service${NC}"
  echo -e "${GREEN}复制下列节点配置信息并黏贴到本地钱包节点配置文件${NC}"
  echo -e "${GREEN}txhash 和 outputidx在本地钱包转25000WGR后到调试台输入 masternode outputs 得出${NC}"
- echo -e "${YELLOW}$ALIAS1 $NODEIP:$COIN_PORT $COINKEY "txhash" "outputidx"${NC}"
+ echo -e "${YELLOW}$NODEIP $NODEIP:$COIN_PORT $COINKEY "txhash" "outputidx"${NC}"
  echo -e "================================================================================================================================"
 }
 
