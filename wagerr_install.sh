@@ -15,7 +15,7 @@ COIN_PORT=55002
 
 
 NODEIP=$(curl -s4 icanhazip.com)
-
+HOSTNAME=$(hostname)
 
 RED='\033[0;31m'
 GREEN='\033[0;32m'
@@ -265,7 +265,7 @@ function important_information() {
  echo -e "Please check ${GREEN}$COIN_NAME${NC} is running with the following command: ${GREEN}systemctl status $COIN_NAME.service${NC}"
  echo -e "${GREEN}复制下列节点配置信息并黏贴到本地钱包节点配置文件${NC}"
  echo -e "${GREEN}txhash 和 outputidx在本地钱包转25000WGR后到调试台输入 masternode outputs 得出${NC}"
- echo -e "${YELLOW}$NODEIP $NODEIP:$COIN_PORT $COINKEY "txhash" "outputidx"${NC}"
+ echo -e "${YELLOW}$HOSTNAME $NODEIP:$COIN_PORT $COINKEY "txhash" "outputidx"${NC}"
  echo -e "================================================================================================================================"
 }
 
