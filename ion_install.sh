@@ -1,17 +1,17 @@
 #!/bin/bash
 
 TMP_FOLDER=$(mktemp -d)
-CONFIG_FILE='wagerr.conf'
-CONFIGFOLDER='/root/.wagerr'
-COIN_DAEMON='wagerrd'
-COIN_CLI='wagerr-cli'
+CONFIG_FILE='ioncoin.conf'
+CONFIGFOLDER='/root/.ioncoin'
+COIN_DAEMON='iond'
+COIN_CLI='ion-cli'
 COIN_PATH='/usr/local/bin/'
-COIN_REPO='https://github.com/wagerr/wagerr.git'
-COIN_TGZ='https://github.com/wagerr/wagerr/releases/download/v3.0.1/wagerr-3.0.1-x86_64-linux-gnu.tar.gz'
-COIN_FOLDER='/root/wagerr-3.0.1/bin'
+COIN_REPO='https://github.com/ioncoincore/ion.git'
+COIN_TGZ='https://github.com/ioncoincore/ion/releases/download/v4.0.0rc2/ion-4.0.0-x86_64-linux-gnu.tar.xz'
+COIN_FOLDER='/root/ion-4.0.0/bin'
 COIN_ZIP=$(echo $COIN_TGZ | awk -F'/' '{print $NF}')
-COIN_NAME='wagerr'
-COIN_PORT=55002
+COIN_NAME='ion'
+COIN_PORT=12700
 
 
 NODEIP=$(curl -s4 icanhazip.com)
@@ -264,7 +264,7 @@ function important_information() {
  echo -e "MASTERNODE PRIVATEKEY is: ${RED}$COINKEY${NC}"
  echo -e "Please check ${GREEN}$COIN_NAME${NC} is running with the following command: ${GREEN}systemctl status $COIN_NAME.service${NC}"
  echo -e "${GREEN}复制下列节点配置信息并黏贴到本地钱包节点配置文件${NC}"
- echo -e "${GREEN}txhash 和 outputidx在本地钱包转25000WGR后到调试台输入 masternode outputs 得出${NC}"
+ echo -e "${GREEN}txhash 和 outputidx在本地钱包转20000ion后到调试台输入 masternode outputs 得出${NC}"
  echo -e "${YELLOW}$HOSTNAME $NODEIP:$COIN_PORT $COINKEY "txhash" "outputidx"${NC}"
  echo -e "================================================================================================================================"
 }
